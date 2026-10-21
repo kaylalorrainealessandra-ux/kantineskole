@@ -1,5 +1,9 @@
 from flask import Flask, render_template
-from meny import MENU_ITEMS
+from meny import VARME_RETT
+from meny import LETT_MAT
+from meny import DRIKKE
+from meny import DESSERT
+
 
 app = Flask(__name__)
 
@@ -9,7 +13,7 @@ def home():
 
 @app.route('/hovedmeny')
 def hovedmeny():
-    return render_template('hovedmeny.html', meny=MENU_ITEMS)
+    return render_template('hovedmeny.html', meny=VARME_RETT)
 
 @app.route('/ukesmeny')
 def ukesmeny():

@@ -10,6 +10,7 @@
 <div class="fastmeny">
     {% for item in meny %}
         <div class="fastmeny-rad">
+            <img src="{{ url_for('static', filename='img/' + item.bilde) }}" alt="{{ item.navn }}">
             <p id="item-navn">{{ item.navn }}</p>
             <p id="item-pris">{{ item.pris}}</p>
         </div>
