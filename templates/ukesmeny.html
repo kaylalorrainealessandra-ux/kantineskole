@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %} ukesmenyen {% endblock %} {% block
+content %}
+
+<h2>Her er menyen for uka!</h2>
+
+<div class="ukesmeny">
+  {% for dag in ukesmeny %}
+  <p>{{dag}}</p>
+  {% for rett in ukesmeny[dag] %}
+  <div class="ukesmeny-rad">
+    <img
+      src="{{ url_for('static', filename='img/' + rett.bilde) }}"
+      alt="{{ rett.navn }}"
+    />
+    <p id="item-navn">{{ rett.navn }}</p>
+    <p id="item-pris">{{ rett.pris}}</p>
+  </div>
+  {% endfor %} {% endfor %}
+</div>
+
+{% endblock %}

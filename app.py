@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from meny import VARME_RETT
-from meny import LETT_MAT
+from meny import FASTE_RETT
+from meny import UKESMENY
 from meny import DRIKKE
 from meny import DESSERT
 
@@ -13,11 +13,15 @@ def home():
 
 @app.route('/hovedmeny')
 def hovedmeny():
-    return render_template('hovedmeny.html', meny=VARME_RETT)
+    return render_template('hovedmeny.html', hovedmeny=FASTE_RETT)
 
 @app.route('/ukesmeny')
 def ukesmeny():
-    return render_template('ukesmeny.html')
+    return render_template('ukesmeny.html', ukesmeny=UKESMENY)
+
+@app.route('/drikke')
+def drikke():
+    return render_template('drikke.html', drikke=DRIKKE)
 
 @app.route('/kontakt')
 def kontakt():
