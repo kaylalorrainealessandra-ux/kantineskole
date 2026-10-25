@@ -1,26 +1,29 @@
-/* =====================================================
-   style.css - styling for Skole Kantine
-   Put this file in: static/style.css
-   ===================================================== */
 
-
-/* ---------- 1. COLORS (variables) ----------
-   :root means "the whole page". We store colors here once
+/* 1. farge variabler
+   :root betyr "the whole page". We store colors here once
    and reuse them with var(--name). Why? If you want to change
    the color theme, you only change it in ONE place. */
+
+   /* basically at istedenfor å copy paste fra forrige koder, er det mer 
+   rimelig å bruke var(--variabelnavn) for å ta de fargene man vil ha */
+
 :root {
     --farge-bakgrunn: #fdf6ec;   /* soft cream background */
-    --farge-hoved:    #e85830;   /* green - used for nav and headings */
-    --farge-hoved-mork: #bb3128; /* darker green - used on hover */
-    --farge-tekst:    #2b2b2b;   /* dark gray text (easier to read than pure black) */
-    --farge-kort:     #ffffff;   /* white background for the menu cards */
+    --farge-hoved:    #e85830;   /* brukt for nav og headings */
+    --farge-hoved-mork: #bb3128; /* brukt på hover */
+    --farge-tekst:    #2b2b2b;   /* mørke grå text */
+    --farge-kort:     #ffffff;   /* hvit bg for meny kortene */
 }
 
 
-/* ---------- 2. RESET / BASIC SETUP ----------
+/*  2. BASIC SETUP 
    Browsers add their own default spacing. "*" selects everything.
    box-sizing: border-box makes width include padding and border,
    which makes sizes much easier to predict. */
+
+   /* siden browsers har sine egne default spacing, og med å bruke "*", kan du 
+   kontrollere spacingene selv */
+
 * {
     box-sizing: border-box;
 }
@@ -33,24 +36,25 @@ body {
 
     /* Flexbox on body + min-height makes the footer stay at the
        bottom of the screen even when the page has little content. */
-    min-height: 100vh;                   /* 100vh = full height of the screen */
+
+    min-height: 100vh;           /* 100vh (viewport height)= full height of the screen (vw er viewport width)*/
     display: flex;
-    flex-direction: column;              /* stack nav, content and footer vertically */
+    flex-direction: column;      /* stack nav, content and footer vertically */
 }
 
-/* Homepage picture */
+/* Homepage pic */
 .welcome {
     display: block;          /* images are inline by default; block lets margin auto center it */
     width: 100%;             /* shrink to fit the screen width... */
-    max-width: 450px;        /* ...but never get wider than 600px */
-    height: auto;            /* keeps the correct proportions */
+    max-width: 450px;        /* ...but never get wider than 450px */
+    height: auto;            /* bruke auto så det blir riktig proposjonelt */
     margin: 20px auto;       /* auto on left/right centers the image */
     border-radius: 12px;     /* rounded corners to match the menu cards */
     box-shadow: 0 6px 10px rgba(115, 33, 33, 0.822);
 }
 
 
-/* ---------- 3. NAVIGATION BAR ---------- */
+/* 3. NAVIGATION BAR */
 nav {
     display: flex;                       /* puts the links next to each other in a row */
     flex-wrap: wrap;                     /* on small screens the links can go to the next line */
@@ -68,11 +72,11 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--farge-hoved-mork);  /* feedback so the user sees what they point at */
+    background-color: var(--farge-hoved-mork); 
 }
 
 
-/* ---------- 4. PAGE CONTENT ----------
+/* 4. PAGE CONTENT 
    The block "content" in base.html puts h1, h2, h3, divs etc.
    directly in the body. To keep them centered and not too wide,
    we limit the width of the headings and menu boxes below. */
@@ -86,15 +90,15 @@ h1 {
 }
 
 
-/* ---------- 5. MENU LISTS (hovedmeny + ukesmeny) ----------
+/*  5. MENU LISTS (hovedmeny + ukesmeny) 
    Both pages use the same look, so we write ONE rule for both
    by separating the selectors with a comma. Less code, and the
-   pages always look the same. */
+   pages always look the same. (holder listene til å se like ut) */
 .fastmeny,
 .ukesmeny {
-    max-width: 700px;                    /* don't get wider than this on big screens */
-    width: 100%;                         /* but shrink to fit on small screens */
-    margin: 20px auto;                   /* "auto" on left/right centers the box */
+    max-width: 700px;                    /* setter en limit på bredden til listen */
+    width: 100%;                         /* kan shrinke til å passe mindre skjerm */
+    margin: 20px auto;                   /* "auto" on left/right centers the box (at det sentrerer boksene) */
     padding: 0 15px;
 }
 
@@ -108,23 +112,23 @@ h1 {
     padding: 12px;
     margin-bottom: 12px;                 /* space between the cards */
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);   /* soft shadow makes it look like a card */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);   
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* NEW: applies while the mouse is over a card */
+
 .fastmeny-rad:hover,
 .ukesmeny-rad:hover {
-    transform: translateY(-4px);                 /* lifts the card up slightly */
-    box-shadow: 0 8px 16px rgba(216, 72, 72, 0.631);   /* stronger shadow makes it look like it floats */
+    transform: translateY(-4px);                 /* løfter kortet med 4px i Y aksen når kortet er hovered */
+    box-shadow: 0 8px 16px rgba(216, 72, 72, 0.631);   
 }
 
-/* Dish images */
+
 .fastmeny-rad img,
 .ukesmeny-rad img {
     width: 90px;
     height: 90px;
-    object-fit: cover;                   /* crops the image to fill the square without stretching it */
+    object-fit: cover;                   /* cropper bildet til listen / kortet uten at det ser stretched ut */
     border-radius: 8px;
 }
 
@@ -153,9 +157,9 @@ h1 {
 }
 
 .drikke {
-    max-width: 700px;                    /* don't get wider than this on big screens */
-    width: 100%;                         /* but shrink to fit on small screens */
-    margin: 20px auto;                   /* "auto" on left/right centers the box */
+    max-width: 700px;                   
+    width: 100%;                         
+    margin: 20px auto;                   
     padding: 0 15px;
 }
 
@@ -163,7 +167,7 @@ h1 {
 .drikke-rad img {
     width: 90px;
     height: 90px;
-    object-fit: cover;                   /* crops the image to fill the square without stretching it */
+    object-fit: cover;                   /* cropper bildet til listen / kortet uten at det ser stretched ut */
     border-radius: 8px;
 }
 
@@ -186,17 +190,17 @@ h1 {
 
 
 
-/* ---------- 6. CONTACT PAGE ----------
+/* 6. CONTACT PAGE 
    <span> is "inline" by default, so all numbers would end up on
    one line. display: block gives each one its own line. */
 span {
     display: block;
     text-align: center;
-    margin: 8px 0;
+    margin: 15px ;
 }
 
 
-/* ---------- 7. FOOTER ---------- */
+/* 7. FOOTER  */
 footer {
     margin-top: auto;                    /* pushes the footer down to the bottom (works with the flex body) */
     padding: 15px;
