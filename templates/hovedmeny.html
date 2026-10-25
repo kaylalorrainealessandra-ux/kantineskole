@@ -8,11 +8,12 @@
 <h3> Dette er faste menyen vår: </h3>
 
 <div class="fastmeny">
-    {% for item in hovedmeny %}
+    {% for rett in hovedmeny %}
         <div class="fastmeny-rad">
-            <img src="{{ url_for('static', filename='img/' + item.bilde) }}" alt="{{ item.navn }}">
-            <p id="item-navn">{{ item.navn }}</p>
-            <p id="item-pris">{{ item.pris}}</p>
+            <img src="{{ url_for('static', filename='img/' + rett.bilde) }}" alt="{{ rett.navn }}">
+            <p id="item-navn">{{ rett.navn }}</p>
+            <p id="item-pris">{{ rett.pris }}</p>
+            <p id="item-valuta">{{ rett.valuta}}</p>
         </div>
     {% endfor %}
 </div>

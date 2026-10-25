@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} drikkemeny {% endblock%}
+
+{% block content%} 
+
+
+<h1>Her er drikkemenyen!!</h1>
+
+<div class="drikke">
+    {% for rett in drikke %}
+        <div class="drikke-rad">
+            <img src="{{ url_for('static', filename='img/' + rett.bilde) }}" alt="{{ rett.navn }}">
+            <p id="item-navn">{{ rett.navn }}</p>
+            <p id="item-pris">{{ rett.pris }}</p>
+            <p id="item-valuta">{{ rett.valuta}}</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
