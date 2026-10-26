@@ -13,7 +13,7 @@ Jeg har gjort nettsiden til å være oversiktlig og enkel til å navigere gjenno
 <br>
 
 ### Bruk av AI
-Promptene som jeg har brukt for å lage nettsiden er: 
+Promptene som jeg har brukt for å få hjelp med nettsiden er: 
 
 1. ***"Could you make a cantine data on python with food items with 15-20 different food items?"***
 + Dette gjelder innholdet til menyen til kantina.
