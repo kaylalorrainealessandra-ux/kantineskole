@@ -25,5 +25,10 @@ Promptene som jeg har brukt for å få hjelp med nettsiden er:
 
 <br>
 
-3. Jeg har også brukt AI til å stille enkelte spørsmål for å forklare funksjoner i koden min for å sørge at jeg har riktig forståelse og har skrevet koden på en oversiktlig måte. 
+3. ***"Give comments on the css code that i wrote to explain the functions so i can note it down later on"***
++ Denne prompten brukte jeg for å ha et mer utdypende notater / comments i css koden
+
+<br>
+
+4. Jeg har også brukt AI til å stille enkelte spørsmål for å forklare funksjoner i koden min for å sørge at jeg har riktig forståelse og har skrevet koden på en oversiktlig måte. 
 
